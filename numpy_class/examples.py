@@ -7,6 +7,7 @@ import math
 # UTILS
 
 def dot_product(a, b):
+    """~30 times slower than numpy dot product"""
     dot = 0
     for e1, e2 in zip(a, b):
         dot += e1 * e2
