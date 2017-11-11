@@ -41,7 +41,16 @@ print(df.columns)
 print(df['passengers']) # Equivalent: df.passengers
 
 # Add a column with fixed value
+df['one'] = 1
 df['two'] = 2
+print(df.head())
+
+# Remove columns
+df.drop(['one', 'two'], inplace=True, axis=1)
+print(df.head())
+
+# Remove rows
+df.drop(df.index[:3], inplace=True) # First 3 rows
 print(df.head())
 
 # Add columns based on the other column values
