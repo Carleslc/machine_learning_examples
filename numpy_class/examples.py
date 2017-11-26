@@ -49,6 +49,7 @@ print(f"a * b (dot product) (convenient): { np.dot(a, b) }") # Alternative: a.do
 print(f"a * b (inner product == dot product): { np.inner(a, b) }")
 print(f"a * b (outer product):\n{ np.outer(a, b) }")
 print(f"norm: { np.linalg.norm(a) }") # Equivalent: np.sqrt( a.dot(a) )
+print(f"euclidian distance between a and b: { np.linalg.norm(a - b) }") # Equivalent: np.sqrt(((v2 - v1)**2).sum())
 cos = a.dot(b) / (np.linalg.norm(a) * np.linalg.norm(b))
 print(f"cosinus angle: { cos }")
 print(f"angle: { np.arccos(cos) }") # radians by default
