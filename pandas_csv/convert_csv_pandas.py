@@ -29,8 +29,17 @@ CSV = "../airline/international-airline-passengers.csv"
 Last 3 rows are irrelevant / trash
 """
 
+print("AIRLINE")
+
 df = pd.read_csv(CSV, engine="python", skipfooter=3)
 
+# Check types
+print(df.dtypes)
+
+# Get some statistics
+print(df.describe())
+
+# Print the attributes
 print(df.columns)
 
 # Rename columns
@@ -45,22 +54,21 @@ df['one'] = 1
 df['two'] = 2
 print(df.head())
 
-# Remove columns
-df.drop(['one', 'two'], inplace=True, axis=1)
-print(df.head())
+# Remove columns without overwrite
+print(df.drop(['one', 'two'], axis=1).head())
 
-# Remove rows
+# Remove rows in place (overwrite)
 df.drop(df.index[:3], inplace=True) # First 3 rows
 print(df.head())
 
 # Add columns based on the other column values
 df['product'] = df.apply(lambda row: row.passengers * row.two, axis=1)
 
-type(df.month[0])
+print(type(df.month[3]))
 df.month = df.apply(lambda row: datetime.strptime(row.month, "%Y-%m"), axis=1)
 print(df.head())
 df.info()
-type(df.month)
+print(type(df.month[3]))
 
 # JOIN
 
