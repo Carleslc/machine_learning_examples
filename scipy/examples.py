@@ -15,7 +15,7 @@ norm.pdf(0, loc=5, scale=10)
 r = np.random.randn(10)
 norm.pdf(r)
 
-# joint probability p(x1..xn) = x1 * .. xn
+# joint probability p(x1..xn) = x1 * .. * xn
 # log of joint probability
 norm.logpdf(r)
 

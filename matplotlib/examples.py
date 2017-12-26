@@ -48,6 +48,7 @@ plt.hist(R, facecolor='green')
 plt.show()
 
 N = np.random.randn(10000)
+# Also: np.random.normal(mean, rms, number of points)
 plt.title("Normal distribution")
 plt.hist(N, bins=60, facecolor='orange') # bins = number of buckets
 plt.show()
